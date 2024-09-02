@@ -1,0 +1,148 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(220, 220, 220);
+  margin: 0;
+}
+
+#app {
+  display: grid;
+  place-items: center center;
+  height: 100vh;
+  min-height: 600px;
+  min-width: 600px;
+}
+
+.dragNone {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border: 3px dashed darkslateblue;
+  border-radius: 20px;
+  width: 50vw;
+  height: 50vh;
+  color:darkslateblue;
+  background-color: rgba(71, 61, 139, 0.15);
+}
+
+.dragInvalid {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border: 3px dashed rgb(192, 45, 45);
+  border-radius: 20px;
+  width: 51vw;
+  height: 51vh;
+  color: rgb(192, 45, 45);
+  background-color: rgba(192, 45, 45, 0.15);
+}
+
+.dragValid {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border: 3px dashed rgb(49, 119, 12);
+  border-radius: 20px;
+  width: 51vw;
+  height: 51vh;
+  color: rgb(49, 119, 12);
+  background-color: rgba(49, 119, 12, 0.15);
+}
+
+.dragNoneWithResults {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  margin: 20px;
+  border: 3px dashed darkslateblue;
+  border-radius: 20px;
+  width: 50vw;
+  min-height: 100px;
+  color:darkslateblue;
+  background-color: rgba(71, 61, 139, 0.15);
+}
+
+.dragInvalidWithResults {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  margin: 20px;
+  border: 3px dashed rgb(192, 45, 45);
+  border-radius: 20px;
+  width: 51vw;
+  min-height: 100px;
+  color: rgb(192, 45, 45);
+  background-color: rgba(192, 45, 45, 0.15);
+}
+
+.dragValidWithResults {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  margin: 20px;
+  border: 3px dashed rgb(49, 119, 12);
+  border-radius: 20px;
+  width: 51vw;
+  min-height: 100px;
+  color: rgb(49, 119, 12);
+  background-color: rgba(49, 119, 12, 0.15);
+}
+
+#dropText {
+  place-self: center;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.appWithNoResults {
+  display: none;
+}
+
+div {
+  display: grid;
+}
+
+#results > div {
+  overflow-x: auto;
+}
+
+canvas, table, th, td {
+  border: 1px solid black;
+}
+
+canvas {
+  place-self: center;
+}
+
+/* div {
+  display: grid;
+  align-items: center;
+  overflow-x: auto;
+} */
+
+table {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-collapse:collapse;
+}
+
+th, td {
+  text-align: center;
+  padding: 5px;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+tbody > tr:hover {
+  background-color:rgba(133, 89, 64, 0.366);
+  /* color: blueviolet; */
+}
+
+th {
+  background-color: #855940c9;
+  color: white;
+}
