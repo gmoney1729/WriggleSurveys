@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(220, 220, 220);
@@ -122,25 +128,25 @@ div {
   overflow-x: auto;
 }
 
-canvas, table, th, td {
-  border: 1px solid black;
+th, td {
+  border: 1px solid rgb(100, 100, 100);
 }
 
 canvas {
+  border: 2px solid rgb(100, 100, 100);
   place-self: center;
 }
 
-/* div {
-  display: grid;
-  align-items: center;
-  overflow-x: auto;
-} */
-
 table {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100%;
+  margin: 20px;
+  width: calc(100% - 3 * 20px);
   border-collapse:collapse;
+  border: 2px solid rgb(100, 100, 100);
+}
+
+h3, h2 {
+  margin: 20px;
+  border-bottom: 2px solid rgb(100, 100, 100);
 }
 
 th, td {
@@ -154,10 +160,9 @@ tr:nth-child(odd) {
 
 tbody > tr:hover {
   background-color:rgba(133, 89, 64, 0.366);
-  /* color: blueviolet; */
 }
 
 th {
-  background-color: #855940c9;
+  background-color: #855940b5;
   color: white;
 }

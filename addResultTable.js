@@ -1,3 +1,8 @@
+let linearUnitSuffix = ' [m]';
+let angularUnitSuffix = ' [dms]'
+let linearPrecision = 3;
+let angularPrecision = 4;
+
 export function addResultTable (objCTARes, resultDiv) {
     
     const tableElement = document.createElement('table');
@@ -6,18 +11,18 @@ export function addResultTable (objCTARes, resultDiv) {
     const tableHeaderElement = document.createElement('thead');
     const headerRowElement = tableHeaderElement.insertRow();
     const columnNames = new Map([
-        ['pID', 'Point ID'],
-        ['N', 'Northing'],
-        ['E', 'Easting'],
-        ['H', 'Height'],
-        ['chainage', 'Chainage'],
-        ['alignmentHOffset', 'CL Offset'],
-        ['alignmentVOffset', 'CL Height Diff'],
-        ['rotation', 'Rotation'],
-        ['radialDistance', 'Radial Distance'],
-        ['radiusResidual', 'Radius Deviation'],
-        ['tunnelCentreHOffset', 'Centre Horizontal Offset'],
-        ['tunnelCentreVOffset', 'Centre Vertical Offset'],
+        ['pID', 'Measured Point ID'],
+        ['N', 'Northing' + linearUnitSuffix],
+        ['E', 'Easting' + linearUnitSuffix],
+        ['H', 'Height' + linearUnitSuffix],
+        ['chainage', 'Chainage' + linearUnitSuffix],
+        ['alignmentHOffset', 'CL Offset' + linearUnitSuffix],
+        ['alignmentVOffset', 'CL Height Diff' + linearUnitSuffix],
+        ['rotation', 'Rotation' + angularUnitSuffix],
+        ['radialDistance', 'Radial Distance' + linearUnitSuffix],
+        ['radiusResidual', 'Radius Deviation' + linearUnitSuffix],
+        ['tunnelCentreHOffset', 'Centre Horizontal Offset' + linearUnitSuffix],
+        ['tunnelCentreVOffset', 'Centre Vertical Offset' + linearUnitSuffix],
     ]);
     
     for (const value of columnNames.values()) {
@@ -31,17 +36,17 @@ export function addResultTable (objCTARes, resultDiv) {
     for (const measPoint of objCTARes.measuredPoints) {
         const tableRowElement = tableBodyElement.insertRow();
         tableRowElement.insertCell().textContent = measPoint['pID'];
-        tableRowElement.insertCell().textContent = measPoint['N'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['E'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['H'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['chainage'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['alignmentHOffset'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['alignmentVOffset'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['rotation'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['radialDistance'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['radiusResidual'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['tunnelBFCHOffset'].toFixed(3);
-        tableRowElement.insertCell().textContent = measPoint['tunnelBFCVOffset'].toFixed(3);
+        tableRowElement.insertCell().textContent = measPoint['N'].toFixed(linearPrecision);
+        tableRowElement.insertCell().textContent = measPoint['E'].toFixed(linearPrecision);
+        tableRowElement.insertCell().textContent = measPoint['H'].toFixed(linearPrecision);
+        tableRowElement.insertCell().textContent = measPoint['chainage'].toFixed(linearPrecision);
+        tableRowElement.insertCell().textContent = measPoint['alignmentHOffset'].toFixed(linearPrecision);
+        tableRowElement.insertCell().textContent = measPoint['alignmentVOffset'].toFixed(linearPrecision);
+        tableRowElement.insertCell().textContent = measPoint['rotation'].toFixed(angularPrecision);
+        tableRowElement.insertCell().textContent = measPoint['radialDistance'].toFixed(linearPrecision);
+        tableRowElement.insertCell().textContent = measPoint['radiusResidual'].toFixed(linearPrecision);
+        tableRowElement.insertCell().textContent = measPoint['tunnelBFCHOffset'].toFixed(linearPrecision);
+        tableRowElement.insertCell().textContent = measPoint['tunnelBFCVOffset'].toFixed(linearPrecision);
     }
     tableElement.append(tableBodyElement);
 }
