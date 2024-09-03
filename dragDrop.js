@@ -5,6 +5,7 @@ const dropArea = document.getElementById('dropArea');
 const dropText = document.getElementById('dropText')
 const resultsArea = document.getElementById('results');
 const defaultDropText = dropText.innerHTML;
+const demoButton = document.getElementById('demo');
 let isReadReady = false;
 let dragCounter = 0;
 
@@ -94,6 +95,10 @@ export function noResultsHandler () {
 export function validResultHandler () {
     dropArea.className = '';
     dropArea.classList.add('dragNoneWithResults');
+
+    demoButton.className = '';
+    demoButton.classList.add('hiddenButton');
+
     dropText.textContent = 'Drop another file';
     resultsArea.className = '';
 }

@@ -95,7 +95,22 @@ body {
   margin: 10px;
 }
 
+button {
+  background-color: rgba(71, 61, 139, 0.9);
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+}
+
 .appWithNoResults {
+  display: none;
+}
+
+.hiddenButton {
   display: none;
 }
 
